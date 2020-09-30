@@ -7,17 +7,6 @@ public class SceneLoader : MonoBehaviour
 {
     [SerializeField] float levelLoadDelay = 2f;
 
-    private void Awake()
-    {
-
-    }
-    void Start()
-    {
-        if(SceneManager.GetActiveScene().buildIndex == 0)
-        {
-            Invoke("LoadFirstLevel", 5f);
-        }
-    }
     public void LoadFirstLevel()
     {
         SceneManager.LoadScene(1);
