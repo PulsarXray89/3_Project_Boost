@@ -9,6 +9,7 @@ public class CollisionHandler : MonoBehaviour
 
     [SerializeField] GameObject deathParticles;
     [SerializeField] GameObject successParticles;
+    GameObject landingPad;
 
     float levelLoadDelay = 2f;
     SceneLoader loader;
@@ -17,6 +18,7 @@ public class CollisionHandler : MonoBehaviour
     private void Start()
     {
         loader = FindObjectOfType<SceneLoader>().GetComponent<SceneLoader>();
+        landingPad = GameObject.FindGameObjectWithTag("Finish");
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -40,7 +42,7 @@ public class CollisionHandler : MonoBehaviour
     {
         isCollisionsDisabled = true;
         SendMessage("EnablePlayerTranscending");
-        Instantiate(successParticles, transform.position, Quaternion.identity);
+        Instantiate(successParticles, landingPad.transform.position, Quaternion.identity);
         loader.Invoke("LoadNextLevel", levelLoadDelay);
     }
     private void StartDeathSequence()
