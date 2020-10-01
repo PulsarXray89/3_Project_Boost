@@ -161,7 +161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 424fc601ce0d75a49aec8d6bf8e70a53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainThrust: 2000
+  mainThrust: 1200
   rcsThrust: 300
   mainEngineAudio: {fileID: 8300000, guid: 62986448d9733ee4590ab65701a79f74, type: 3}
   mainEngineParticles: {fileID: 4162033683793509550}
@@ -182,6 +182,7 @@ MonoBehaviour:
     type: 3}
   successParticles: {fileID: 8639620217482680602, guid: c787d74ee0d4ecc45a2d54d23e59eb1f,
     type: 3}
+  successPoints: 150
 --- !u!136 &892001275
 CapsuleCollider:
   m_ObjectHideFlags: 0

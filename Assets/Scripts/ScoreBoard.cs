@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ScoreBoard : MonoBehaviour
+public class Scoreboard : MonoBehaviour
 {
     private void Awake()
     {
-        int scoreBoards = FindObjectsOfType<ScoreBoard>().Length;
+        int scoreBoards = FindObjectsOfType<ScoreText>().Length;
         if (scoreBoards > 1)
         {
             Destroy(gameObject);

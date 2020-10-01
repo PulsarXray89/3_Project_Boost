@@ -7,8 +7,7 @@ public class ScoreText : MonoBehaviour
 {
     int score = 0;
     Text scoreText;
-
-    void Start()
+    void Awake()
     {
         scoreText = GetComponentInChildren<Text>();
         scoreText.text = score.ToString();

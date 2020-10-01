@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.SocialPlatforms.Impl;
+using UnityEngine.UI;
 
 public class CollisionHandler : MonoBehaviour
 {
@@ -11,8 +12,8 @@ public class CollisionHandler : MonoBehaviour
     [SerializeField] GameObject deathParticles;
     [SerializeField] GameObject successParticles;
     [SerializeField] int successPoints = 150;
-    GameObject landingPad;
 
+    GameObject landingPad;
     float levelLoadDelay = 2f;
     SceneLoader loader;
     ScoreText scoreText;
@@ -53,7 +54,7 @@ public class CollisionHandler : MonoBehaviour
     private void StartDeathSequence()
     {
         isCollisionsDisabled = true;
-        scoreText.ResetScore();
+        //scoreText.ResetScore();
         SendMessage("EnablePlayerTranscending");
         Instantiate(deathParticles, transform.position, Quaternion.identity);
         Destroy(gameObject);

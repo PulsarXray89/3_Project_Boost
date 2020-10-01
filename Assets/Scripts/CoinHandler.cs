@@ -7,11 +7,11 @@ public class CoinHandler : MonoBehaviour
     [SerializeField] GameObject onPickupParticles;
     [SerializeField] int points = 5;
 
-    ScoreText scoreText;
+    //ScoreText scoreText;
 
     private void Start()
     {
-        scoreText = FindObjectOfType<ScoreText>();
+        //scoreText = FindObjectOfType<ScoreText>();
     }
 
     private void OnTriggerEnter(Collider collider)
@@ -20,7 +20,7 @@ public class CoinHandler : MonoBehaviour
         {
             Instantiate(onPickupParticles, transform.position, Quaternion.identity);
             Destroy(gameObject);
-            scoreText.AddToScore(points);
+            //scoreText.AddToScore(points);
         }
     }
 }
