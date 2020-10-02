@@ -5,11 +5,27 @@ using UnityEngine.UI;
 
 public class ScoreText : MonoBehaviour
 {
-    int score = 0;
-    Text scoreText;
-    void Awake()
+    public static ScoreText _instance;
+    public static ScoreText instance { get { return _instance; } }
+    private int score;
+    private Text scoreText;
+
+    private void Awake()
     {
-        scoreText = GetComponentInChildren<Text>();
+        scoreText = FindObjectOfType<Text>();
+        if (_instance != null && _instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            _instance = this;
+        }
+    }
+
+    void Start()
+    {
+        score = 0;
         scoreText.text = score.ToString();
     }
 

@@ -16,12 +16,10 @@ public class CollisionHandler : MonoBehaviour
     GameObject landingPad;
     float levelLoadDelay = 2f;
     SceneLoader loader;
-    ScoreText scoreText;
     bool isCollisionsDisabled = false;
 
     private void Start()
     {
-        scoreText = FindObjectOfType<ScoreText>();
         loader = FindObjectOfType<SceneLoader>();
         landingPad = GameObject.FindGameObjectWithTag("Finish");
     }
@@ -46,7 +44,7 @@ public class CollisionHandler : MonoBehaviour
     private void StartFinishSequence()
     {
         isCollisionsDisabled = true;
-        scoreText.AddToScore(successPoints);
+        ScoreText.instance.AddToScore(successPoints);        
         SendMessage("EnablePlayerTranscending");
         Instantiate(successParticles, landingPad.transform.position, Quaternion.identity);
         loader.Invoke("LoadNextLevel", levelLoadDelay);
@@ -54,7 +52,7 @@ public class CollisionHandler : MonoBehaviour
     private void StartDeathSequence()
     {
         isCollisionsDisabled = true;
-        //scoreText.ResetScore();
+        ScoreText.instance.ResetScore();
         SendMessage("EnablePlayerTranscending");
         Instantiate(deathParticles, transform.position, Quaternion.identity);
         Destroy(gameObject);

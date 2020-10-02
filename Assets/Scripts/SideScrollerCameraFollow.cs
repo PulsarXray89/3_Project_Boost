@@ -1,24 +1,20 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class SideScrollerCameraFollow : MonoBehaviour
 {
-    [SerializeField] float smoothTime = 0.3F;
+    [SerializeField] float smoothSpeed = 10f;
     [SerializeField] Vector3 offset = new Vector3(0, 7, -50);
-    [SerializeField] Vector3 velocity = Vector3.zero;
-    [SerializeField] GameObject target;
-    Transform targetTransform;
+    [SerializeField] Transform target;
 
     private void Start()
     {
-        target = GameObject.FindGameObjectWithTag("Player");
-        targetTransform = target.transform;
+        target = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        Vector3 targetPosition = targetTransform.TransformPoint(offset);
-        transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime);
+        Vector3 targetPosition = target.position + offset;
+        Vector3 smoothPosition = Vector3.Lerp(transform.position, targetPosition, smoothSpeed * Time.deltaTime);
+        transform.position = smoothPosition;
     }
 }
