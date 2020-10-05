@@ -109,7 +109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onPickupParticles: {fileID: 1297161530605832768, guid: c1ea1ed160e6cfa4dab294d6cc832679,
     type: 3}
-  score: 5
+  points: 5
 --- !u!114 &578832955
 MonoBehaviour:
   m_ObjectHideFlags: 0

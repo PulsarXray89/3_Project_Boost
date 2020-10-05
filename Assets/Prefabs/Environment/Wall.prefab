@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5247133087447000029}
   - component: {fileID: 5247133087442801949}
   m_Layer: 0
-  m_Name: PillarPrototype02x08x02
+  m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -56,6 +56,6 @@ public class CollisionHandler : MonoBehaviour
         SendMessage("EnablePlayerTranscending");
         Instantiate(deathParticles, transform.position, Quaternion.identity);
         Destroy(gameObject);
-        loader.Invoke("LoadFirstLevel", levelLoadDelay);
+        loader.Invoke("LoadCurrentLevel", levelLoadDelay);
     }
 }

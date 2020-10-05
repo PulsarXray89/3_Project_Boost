@@ -25,4 +25,8 @@ public class SceneLoader : MonoBehaviour
             SceneManager.LoadScene(nextScene);
         }
     }
+    public void LoadCurrentLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
 }
